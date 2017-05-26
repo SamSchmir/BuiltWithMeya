@@ -3,7 +3,10 @@ states:
     text_buttons_state:
         component: meya.text_buttons
         properties:
-            text: I have two main ways for you to contact me. Click one of the options below and I'll send a message back with the contact information.
+            text: |
+                If you want to get in touch with my creator, there are two ways to do so. 
+                ...
+                Click one of the options below and I'll reply with the contact information.
             output: platform
             buttons:
                 - text: Email
@@ -20,12 +23,12 @@ states:
     twitter_state:
         component: meya.text
         properties:
-            text: You can Tweet me @SamSchmir. I read all of my mentions!
+            text: You can Tweet my creator @SamSchmir. He reads all of his mentions!
         return: true
     email_state:
         component: meya.text
         properties:
-            text: If you need to contact me via email, it's sam@schmir.me
+            text: If you need to contact me via email, it's built-with-meya@schmir.me
         return: true
     home_state:
         component: meya.text_buttons
