@@ -1,0 +1,24 @@
+-   flow: begin
+    intent: meya.keyword
+    settings:
+        keyword: begin
+-   flow: learn
+    intent: meya.keyword
+    settings:
+        keyword: learn
+-   flow: main_menu
+    intent: meya.keyword
+    settings:
+        keyword: /home
+-   flow: more
+    intent: meya.keyword
+    settings:
+        keyword: more
+-   flow: polls
+    intent: meya.keyword
+    settings:
+        keyword: polls
+-   flow: trivia
+    intent: meya.keyword
+    settings:
+        keyword: trivia
