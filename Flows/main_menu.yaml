@@ -1,0 +1,39 @@
+name: main_menu
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: 👋  Hi there {{ user.first_name }} and welcome! Please select from the following options👇
+            output: options
+            buttons:
+                - text: ✔️ Interactive Polls
+                  flow: polls
+                  action: polls
+                - text: 🔨 Learn More
+                  flow: learn
+                  action: survey
+                - text: ➕ More Options
+                  flow: more
+                  action: more
+        transitions:
+            polls: polls_state
+            learn: learn_state
+            more: more_state
+    polls_state:
+        component: meya.text_buttons
+        properties:
+            text: ✔️ nteractive Polls
+            flow: polls
+        return: true
+    learn_state:
+        component: meya.text_buttons
+        properties:
+            text: 🔨 Learn More
+            flow: learn
+        return: true
+    more_state:
+        component: meya.text_buttons
+        properties:
+            text: ➕ More
+            flow: more
+        return: true

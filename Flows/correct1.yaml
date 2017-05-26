@@ -1,0 +1,41 @@
+name: correct1
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                That's correct! Jack Dorsey (@Jack) is the CEO of Twitter.
+                ...
+                Here the next question - What does the Statue of Libery hold in her right hand?
+            output: trivia1
+            buttons:
+                - text: A torch
+                  flow: correct2
+                  action: correct2
+                - text: A glass of water
+                  flow: wrong2
+                  action: wrong2
+                - text: A broom
+                  flow: wrong2
+                  action: wrong2
+                - text: A candle
+                  flow: wrong2
+                  action: wrong2
+                - text: 🏠 Go Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            wrong2: wrong2_state
+            correct2: correct2_state
+    wrong2_state:
+        component: meya.text_buttons
+        properties:
+            text: That's wrong. The correct answer is a torch
+            flow: wrong
+        return: true
+    correct2_state:
+        component: meya.text_buttons
+        properties:
+            text: You're correct!
+            flow: correct
+        return: true

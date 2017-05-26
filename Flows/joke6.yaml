@@ -1,0 +1,32 @@
+name: joke6
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                What do you call a cow with no legs? Ground beef 😂
+                ...
+                Would you like me to tell you another one?
+            output: jokes
+            buttons:
+                - text: Yes
+                  flow: joke7
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: joke7
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

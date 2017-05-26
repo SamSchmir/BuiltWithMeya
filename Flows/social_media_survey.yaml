@@ -1,0 +1,84 @@
+name: social_media_survey
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Pick your favorite 👇
+            output: platform
+            buttons:
+                - text: Twitter
+                  action: twitter
+                - text: Facebook
+                  action: facebook
+                - text: Instagram
+                  action: instagram
+                - text: Snapchat
+                  action: snapchat
+                - text: Tumblr
+                  action: tumblr
+                - text: Musical.ly
+                  action: musically
+                - text: Twitch
+                  action: twitch
+                - text: YouTube
+                  action: youtube
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            twitter: twitter_state
+            facebook: facebook_state
+            instagram: instagram_state
+            snapchat: snapchat_state
+            tumblr: tumblr_state
+            musically: musically_state
+            twitch: twitch_state
+            youtube: youtube_state
+            home: home_state
+    twitter_state:
+        component: meya.text
+        properties:
+            text: Nice! My favorite is Twitter too!     Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    facebook_state:
+        component: meya.text
+        properties:
+            text: Nice! My favorite is Twitter.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    instagram_state:
+        component: meya.text
+        properties:
+            text: Nice! I like Instagram, but Twitter is my favorite.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    snapchat_state:
+        component: meya.text
+        properties:
+            text: Nice! I use Snapchat everyday, but Twitter is still my favorit platform.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    tumblr_state:
+        component: meya.text
+        properties:
+            text: Nice! My favorite is Twitter.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    musically_state:
+        component: meya.text
+        properties:
+            text: Nice! My favorite is Twitter.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    twitch_state:
+        component: meya.text
+        properties:
+            Text: Nice! My favorite is Twitter.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    youtube_state:
+        component: meya.text
+        properties:
+            text: Nice! My favorite is Twitter.      Reminder - If you'd like to return to the home menu, type "/home"
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+            description: Go back to the main menu
+        return: true

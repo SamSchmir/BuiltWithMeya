@@ -1,0 +1,39 @@
+name: gif1
+states:
+    confirm:
+        component: meya.text
+        properties:
+            text: 'Give me a second. Searching for another one...'
+        delay:
+            relative: 2
+    bear:
+        component: meya.image
+        properties:
+            image_url: https://media4.giphy.com/media/8fu6uGQYeAkms/giphy.gif
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Would you like me to send another one?
+            output: gif
+            buttons:
+                - text: Yes
+                  flow: gif2
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: gif2
+        return: true
+    nah_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

@@ -1,0 +1,41 @@
+name: correct4
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                That's correct! Donald Trump, eleced at 70 years old is the oldest President to be elected.
+                ...
+                Here the next question - What is the world's largest ocean?
+            output: trivia1
+            buttons:
+                - text: Atlantic Ocean
+                  flow: wrong5
+                  action: wrong5
+                - text: Pacific Ocean
+                  flow: correct5
+                  action: correct5
+                - text: Indian Ocean
+                  flow: wrong5
+                  action: wrong5
+                - text: Arctic Ocean
+                  flow: wrong5
+                  action: wrong5
+                - text: 🏠 Go Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            wrong5: wrong5_state
+            correct5: correct5_state
+    wrong5_state:
+        component: meya.text_buttons
+        properties:
+            text: That's wrong.
+            flow: wrong
+        return: true
+    correct5_state:
+        component: meya.text_buttons
+        properties:
+            text: You're correct!
+            flow: correct
+        return: true

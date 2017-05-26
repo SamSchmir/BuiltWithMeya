@@ -1,0 +1,7 @@
+name: comment_continuation_1
+states:
+    text_buttons_state:
+        component: meya.text
+        properties:
+            text: What's your comment?
+        return: true

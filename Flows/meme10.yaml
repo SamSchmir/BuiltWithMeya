@@ -1,0 +1,29 @@
+name: meme10
+states:
+    text_buttons_state:
+        component: meya.image_buttons
+        properties:
+            image_url: https://img.ifcdn.com/images/3cdd87a649b73fbd60baffccba6273f89e3c74125370d4d516d96c538c4eb9e7_1.jpg
+            output: memes
+            buttons:
+                - text: Send me another one!
+                  flow: meme11
+                  action: yep
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Send me another one!
+            flow: meme11
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+        return: true

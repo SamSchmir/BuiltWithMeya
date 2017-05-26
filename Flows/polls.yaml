@@ -1,0 +1,69 @@
+name: polls
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Here are a few interactive polls that you can try out 👇
+            output: polls
+            buttons:
+                - text: ❓ Favorite social media platform?
+                  flow: social_media_survey
+                  action: social
+                - text: 😎 Favorite Emoji?
+                  flow: emoji_survey
+                  action: emoji
+                - text: 🎥 Favorite Netflix drama series?
+                  flow: drama_survey
+                  action: drama
+                - text: 🎥 Favorite Netflix comedy series?
+                  flow: comedy_survey
+                  action: comedy
+                - text: 🇺🇸 Dwayne Johnson for President?
+                  flow: dwayne_survey
+                  action: dwayne
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            social: social_state
+            emoji: emoji_state
+            drama: drama_state
+            comedy: comedy_state
+            dwayne: dwayne_survey
+            home: home_state
+    social_state:
+        component: meya.text_buttons
+        properties:
+            text: What's your favorite social media platform?
+            flow: social_media_survey
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: What's your favorite emoji?
+            flow: emoji_survey
+        return: true
+    drama_state:
+        component: meya.text_buttons
+        properties:
+            text: What's your favorite Netflix drama series
+            flow: drama_survey
+        return: true
+    comedy_state:
+        component: meya.text_buttons
+        properties:
+            text: What's your favorite Netflix comedy series?
+            flow: comedy_survey
+        return: true
+    dwayne_state:
+        component: meya.text_buttons
+        properties:
+            text: Dwayne "The Rock" Johnson for President?
+            flow: dwayne_survey
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+        return: true

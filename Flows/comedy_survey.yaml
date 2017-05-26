@@ -1,0 +1,163 @@
+name: comedy_survey
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: What's your favorite Netflix comedy show?
+            output: show
+            buttons:
+                - text: Unbreakable Kimmy Schmidt
+                  action: unbreakablekimmyschmidt
+                - text: Grace and Frankie
+                  action: graceandfrankie
+                - text: Wet Hot American Summer
+                  action: wethotamericansummer
+                - text: Master of None
+                  action: masterofnone
+                - text: W/ Bob & David
+                  action: wbobanddavid
+                - text: Love
+                  action: love
+                - text: Fuller House
+                  action: fullerhouse
+                - text: Flaked
+                  action: flaked
+                - text: The Characters
+                  action: thecharacters
+                - text: The Ranch
+                  action: theranch
+                - text: Lady Dynamite
+                  action: ladydynamite
+                - text: Easy
+                  action: easy
+                - text: Haters Back Off
+                  action: hatersbackoff
+                - text: Trailer Park Boys Out of the Park
+                  action: trailerparkboysoutofthepark
+                - text: One Day at a Time
+                  action: onedayatatime
+                - text: Santa Clarita Diet
+                  action: santaclaritadiet
+                - text: Girlboss
+                  action: girlboss
+                - text: Dear White People
+                  action: dearwhitepeople
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            unbreakablekimmyschmidt: unbreakablekimmyschmidt_state
+            graceandfrankie: graceandfrankie_state
+            wethotamericansummer: wethotamericansummer_state
+            masterofnone: masterofnone_state
+            wbobanddavid: wbobanddavid_state
+            love: love_state
+            fullerhouse: fullerhouse_state
+            flaked: flaked_state
+            thecharacters: thecharacters_state
+            theranch: theranch_state
+            ladydynamite: ladydynamite_state
+            easy: easy_state
+            hatersbackoff: hatersbackoff_state
+            trailerparkboysoutofthepark: trailerparkboysoutofthepark_state
+            onedayatatime: onedayatatime_state
+            santaclaritadiet: santaclaritadiet_state
+            girlboss: girlboss_state
+            dearwhitepeople: dearwhitepeople_state
+            home: home_state
+    unbreakablekimmyschmidt_state:
+        component: meya.text
+        properties:
+            text: Unbreakable Kimmy Schmidt is a good series. Nice choice! Fun fact - Season 3 is due to premoere on May 19, 2017!
+        return: true
+    graceandfrankie_state:
+        component: meya.text
+        properties:
+            text: Grace and Frankie is a good series. Nice choice! Fun fact - We should expect to see a season 4.
+        return: true
+    wethotamericansummer_state:
+        component: meya.text
+        properties:
+            text: Wet Hot American Summer was a good series. Nice choice!
+        return: true
+    masterofnone_state:
+        component: meya.text
+        properties:
+            text: Master of None is a good series. Nice choice! Fun fact - Season 2 is due to premiere on May 12, 2017!
+        return: true
+    wbobanddavid_state:
+        component: meya.text
+        properties:
+            text: W/ Bob & David is a good series. Nice choice!
+        return: true
+    love_state:
+        component: meya.text
+        properties:
+            text: Love is a great series. Good choice! Fun fact - We should expect to see a season 3.
+        return: true
+    fullerhouse_state:
+        component: meya.text
+        properties:
+            text: Fuller House is a good series. Nice choice! Fun fact - We should expect to see a season 3.
+    flaked_state:
+        component: meya.text
+        properties:
+            text: Flaked is a good series. Nice choice! Fun fact - Season 2 is due to premiere on June 2, 2017!
+        return: true
+    thecharacters_state:
+        component: meya.text
+        properties:
+            text: The Characters is a good series. Nice choice! Fun fact - We should expect to see a season 2.
+        return: true
+    theranch_state:
+        component: meya.text
+        properties:
+            text: The Ranch is a good series. Nice choice! Fun fact - Season 2 is due to premiere on June 16, 2017!
+        return: true
+    ladydynamite_state:
+        component: meya.text
+        properties:
+            text: Lady Dynamite is a good series. Nice choice! Fun fact - We should expect to see a season 2.
+        return: true
+    easy_state:
+        component: meya.text
+        properties:
+            text: Easy is a good series. Nice choice! Fun fact - We should expect to see a season 2.
+        return: true
+    hatersbackoff_state:
+        component: meya.text
+        properties:
+            text: Haters Back Off is a good series. Nice choice! Fun fact - We should expect to see a season 2.
+        return: true
+    trailerparkboysoutofthepark_state:
+        component: meya.text
+        properties:
+            text: Trailer Park Boys Out of the Park was a good show. Great choice!
+        return: true
+    onedayatatime_state:
+        component: meya.text
+        properties:
+            text: One Day at a Time is a good show. Nice choice! Fun fact - We should expect to see a season 2.
+        return: true
+    santaclaritadiet_state:
+        component: meya.text
+        properties:
+            text: Santa Clarita Diet is a great show. Nice choice! Fun fact - We should expect to see a season 2.
+        return: true
+    girlboss_state:
+        component: meya.text
+        properties:
+            text: Girlboss is a good show. Nice choice!
+        return: true
+    dearwhitepeople_state:
+        component: meya.text
+        properties:
+            text: Dear White People. Nice choice!
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+            description: Go back to the main menu
+        return: true

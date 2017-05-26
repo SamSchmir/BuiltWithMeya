@@ -1,0 +1,60 @@
+name: dwayne_survey
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Dwayne Johnson for President?
+            output: president
+            buttons:
+                - text: Yes
+                  action: positive
+                - text: Maybe
+                  action: maybe
+                - text: No
+                  action: negative
+                - text: He'd be better than Trump...
+                  action: trump
+                - text: What cant The Rock do?
+                  action: cant
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            positive: positive_state
+            maybe: maybe_state
+            negative: negative_state
+            trump: trump_state
+            cant: cant_state
+            home: home_state
+    positive_state:
+        component: meya.text
+        properties:
+            text: Yessss! The Rock for Pres!
+        return: true
+    maybe_state:
+        component: meya.text
+        properties:
+            text: Oh kay. I understand. Too early to decide?
+        return: true
+    negative_state:
+        component: meya.text
+        properties:
+            text: No? Do you not like Dwayne Johnson?
+        return: true
+    trump_state:
+        component: meya.text
+        properties:
+            text: I agree! At this point, a Chipmunk would be a better President than Trump.
+        return: true
+    cant_state:
+        component: meya.text
+        properties:
+            text: Agreed! He can do everything!
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+            description: Go back to the main menu
+        return: true

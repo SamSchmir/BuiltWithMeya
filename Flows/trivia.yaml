@@ -1,0 +1,38 @@
+name: trivia
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: In which year was the first Tweet tweeted?
+            output: trivia1
+            buttons:
+                - text: In 2005
+                  flow: wrong
+                  action: wrong
+                - text: In 2006
+                  flow: correct
+                  action: correct
+                - text: In 2007
+                  flow: wrong
+                  action: wrong
+                - text: In 2008
+                  flow: wrong
+                  action: wrong
+                - text: 🏠 Go Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            wrong: wrong_state
+            correct: correct_state
+    wrong_state:
+        component: meya.text_buttons
+        properties:
+            text: That's wrong. The correct answer is 2006.
+            flow: wrong
+        return: true
+    correct_state:
+        component: meya.text_buttons
+        properties:
+            text: You're correct!
+            flow: correct
+        return: true

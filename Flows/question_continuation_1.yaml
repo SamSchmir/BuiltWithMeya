@@ -1,0 +1,7 @@
+name: question_continuation_1
+states:
+    text_buttons_state:
+        component: meya.text
+        properties:
+            text: What's your question?
+        return: true

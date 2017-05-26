@@ -1,0 +1,41 @@
+name: wrong
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                Sorry, that's wrong. The first Tweet was tweeted in 2006. View the Tweet 👆 https://twitter.com/jack/status/20
+                ...
+                Here the next question - Who is the CEO of Twitter?
+            output: trivia1
+            buttons:
+                - text: Mark Zuckerberg
+                  flow: wrong1
+                  action: wrong1
+                - text: Bill Gates
+                  flow: wrong1
+                  action: wrong1
+                - text: Jack Dorsey
+                  flow: correct1
+                  action: correct1
+                - text: Evan Spiegel
+                  flow: wrong1
+                  action: wrong1
+                - text: 🏠 Go Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            wrong1: wrong1_state
+            correct1: correct1_state
+    wrong1_state:
+        component: meya.text_buttons
+        properties:
+            text: That's wrong. The correct answer is Jack Dorsey.
+            flow: wrong
+        return: true
+    correct1_state:
+        component: meya.text_buttons
+        properties:
+            text: You're correct!
+            flow: correct
+        return: true

@@ -1,0 +1,29 @@
+name: song
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: I'm The One - DJ Khaled Featuring Lil Wayne, Chance The Rapper, Quavo & Justin Bieber - Would you like to hear another one? https://open.spotify.com/track/72Q0FQQo32KJloivv5xge2
+            output: songs
+            buttons:
+                - text: Yes
+                  flow: song1
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: song1
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

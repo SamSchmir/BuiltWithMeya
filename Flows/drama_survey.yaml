@@ -1,0 +1,132 @@
+name: drama_survey
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: What's your favorite Netflix Drama show?
+            output: show
+            buttons:
+                - text: House of Cards
+                  action: houseofcards
+                - text: Hemlock Grove
+                  action: hemlockgrove
+                - text: Orange Is the New Black
+                  action: orangeisthenewblack
+                - text: Marco Polo
+                  action: marcopolo
+                - text: Bloodline
+                  action: bloodline
+                - text: Sense8
+                  action: sense
+                - text: Narcos
+                  action: narcos
+                - text: Stranger Things
+                  action: strangerthings
+                - text: The Get Down
+                  action: thegetdown
+                - text: The Crown
+                  action: thecrown
+                - text: Gilmore Girls
+                  action: gilmoregirls
+                - text: The OA
+                  action: theoa
+                - text: A Series of Unfortunate Events
+                  action: aseriesofunfortunateevents
+                - text: 13 Reasons Why
+                  action: thirteenreasonswhy
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            houseofcards: houseofcards_state
+            hemlockrove: hemlockgrove_state
+            orangeisthenewblack: orangeisthenewblack_state
+            marcopolo: marcopolo_state
+            bloodline: bloodline_state
+            sense: sense_state
+            narcos: narcos_state
+            strangerthings: strangerthings_state
+            thegetdown: thegetdown_state
+            thecrown: thecrown_state
+            gilmoregirls: gilmoregirls_state
+            theoa: theoa_state
+            aseriesofunfortunateevents: aseriesofunfortunateevents_state
+            thirteenreasonswhy: thirteenreasonswhy_state
+            home: home_state
+    houseofcards_state:
+        component: meya.text
+        properties:
+            text: House of Cards is a great series. Good choice! Fun fact - Season 5 due to premoere on May 30, 2017!
+        return: true
+    hemlockgrove_state:
+        component: meya.text
+        properties:
+            text: Hemlock Grove was a great series. Good choice!
+        return: true
+    orangeisthenewblack_state:
+        component: meya.text
+        properties:
+            text: Orange Is the New Black is a great series. Good choice! Fun fact - Season 5 is due to premiere on June 9, 2017 and we should expect to see seasons 6 & 7 as well.
+        return: true
+    marcopolo_state:
+        component: meya.text
+        properties:
+            text: Marco Polo was a great series. Good choice!
+        return: true
+    bloodline_state:
+        component: meya.text
+        properties:
+            text: Bloodline is a great series. Good choice! Fun fact - The final season, season 3, is due to premiere May 26, 2017!
+        return: true
+    sense_state:
+        component: meya.text
+        properties:
+            text: Sense8 is a great series. Good choice!
+        return: true
+    narcos_state:
+        component: meya.text
+        properties:
+            text: Narcos is a great series. Good choice! Fun fact -  We should expect to see a season 3 and season 4 of Narcos!
+        return: true
+    strangerthings_state:
+        component: meya.text
+        properties:
+            text: Stranger Things is a great series. Good choice! Fun fact - Season 2 is due to premiere on October 31, 2017!
+        return: true
+    thegetdown_state:
+        component: meya.text
+        properties:
+            text: The Get Down is a great series. Good choice!
+        return: true
+    thecrown_state:
+        component: meya.text
+        properties:
+            text: The Crown is a great series
+        return: true
+    gilmoregirls_state:
+        component: meya.text
+        properties:
+            text: Gilmore Girls was a good series. Nice choice!
+        return: true
+    theoa_state:
+        component: meya.text
+        properties:
+            text: The OA was a great series. Good choice!
+        return: true
+    aseriesofunfortunateevents_state:
+        component: meya.text
+        properties:
+            text: A Series of Unfortunate Events is a great series. Good choice! Fun fact - We should expect to see a season 2 & 3!
+        return: true
+    thirteenreasonswhy_state:
+        component: meya.text
+        properties:
+            text: 13 Reasons Why is an incredible show. Great choice! Fun fact - We should expect to see a season 2 of 13 Reasons Why.
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+            description: Go back to the main menu
+        return: true

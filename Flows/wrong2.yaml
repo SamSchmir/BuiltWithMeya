@@ -1,0 +1,41 @@
+name: wrong2
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                Sorry, that's wrong. She holds a torch in her right hand.
+                ...
+                Here the next question - Dijon mustand originated in the city of Dijon, is located in what country?
+            output: trivia1
+            buttons:
+                - text: Italy
+                  flow: wrong3
+                  action: wrong3
+                - text: Germany
+                  flow: wrong3
+                  action: wrong3
+                - text: France
+                  flow: correct3
+                  action: correct3
+                - text: United States
+                  flow: wrong3
+                  action: wrong3
+                - text: 🏠 Go Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            wrong3: wrong3_state
+            correct3: correct3_state
+    wrong3_state:
+        component: meya.text_buttons
+        properties:
+            text: That's wrong.
+            flow: wrong
+        return: true
+    correct3_state:
+        component: meya.text_buttons
+        properties:
+            text: You're correct!
+            flow: correct
+        return: true

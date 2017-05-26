@@ -1,0 +1,162 @@
+name: emoji_survey
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Got a favorite emoji?
+            output: emoji
+            buttons:
+                - text: 😀 
+                  action: grinningface
+                - text: 😬 
+                  action: grimacingface
+                - text: 😁 
+                  action: gfwse
+                - text: 😂 
+                  action: fwtoj
+                - text: 😃 
+                  action: sfwom
+                - text: 😄 
+                  action: sfwomase
+                - text: 😅 
+                  action: sfwomacs
+                - text: 😆
+                  action: sfwomatce
+                - text: 😇 
+                  action: sfwh
+                - text: 😉
+                  action: winkingface
+                - text: 😊
+                  action: sfwse
+                - text: 🙂 
+                  action: ssf
+                - text: 🙃 
+                  action: udf
+                - text: ☺  
+                  action: wsf
+                - text: 😋
+                  action: fsdf
+                - text: 😌 
+                  action: relievedface
+                - text: 😍
+                  action: sfwhse
+                - text: 😘
+                  action: ftak
+                - text: 😗
+                  action: kissingface
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            grinningface: grinningface_state
+            grimacingface: grimacingface_state
+            gfwse: gfwse_state
+            fwtoj: fwtoj_state
+            sfwom: sfwom_state
+            sfwomase: sfwomase_state
+            sfwomacs: sfwomacs_state
+            sfwomatce: sfwomatce_state
+            sfwh: sfwh_state
+            winkingface: winkingface_state
+            sfwse: sfwse_state
+            ssf: ssf_state
+            udf: udf_state
+            wsf: wsf_state
+            fsdf: fsdf_state
+            relievedface: relievedface_state
+            sfwhse: sfwhse_state
+            ftak: ftak_state
+            kissingface: kissingface_state
+            home: home_state
+    grinningface_state:
+        component: meya.text
+        properties:
+            text: Ah, the Grinning face emoji. I like that emoji too!
+        return: true
+    grimacingface_state:
+        component: meya.text
+        properties:
+            text: Ah, the Grimacing Face emoji. I like that emoji too!
+        return: true
+    gfwse_state:
+        component: meya.text
+        properties:
+            text: Ah, the Grinning Face with Smiling Eyes emoji. I like that emoji too!
+        return: true
+    fwtoj_state:
+        component: meya.text
+        properties:
+            text: Ah, the Face with Tears of Joy emoji. I like that emoji too!
+        return: true
+    sfwom_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Open Mouth emoji. I like that emoji too!
+        return: true
+    sfwomase_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Open Mouth and Smiling Eyes emoji. I like that emoji too!
+        return: true
+    sfwomacs_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Open Mouth and Cold Sweat emoji. I like that emoji too!
+        return: true
+    sfwomatce_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Open Mouth and Tightly-Closed Eyes emoji. I like that emoji too!
+        return: true
+    sfwh_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Halo emoji. I like that emoji too!
+        return: true
+    ssf_state:
+        component: meya.text
+        properties:
+            text: Ah, the Winking Face emoji. I like that emoji too!
+        return: true
+    udf_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Smiling Eyes emoji. I like that emoji too!
+        return: true
+    wsf_state:
+        component: meya.text
+        properties:
+            text: Ah, the Slightly Smiling Face emoji. I like that emoji too!
+        return: true
+    fsdf_state:
+        component: meya.text
+        properties:
+            text: Ah, the Upside Down Face emoji. I like that emoji too!
+        return: true
+    relievedface_state:
+        component: meya.text
+        properties:
+            text: Ah, the White Smiling Face emoji. I like that emoji too!
+        return: true
+    sfwhse_state:
+        component: meya.text
+        properties:
+            text: Ah, the Face Savouring Delicious Food emoji. I like that emoji too!
+        return: true
+    ftak_state:
+        component: meya.text
+        properties:
+            text: Ah, the Relieved Face emoji. I like that emoji too!
+        return: true
+    kissingface_state:
+        component: meya.text
+        properties:
+            text: Ah, the Smiling Face with Heart Shaped Eyes emoji. I like that emoji too!
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+            description: Go back to the main menu
+        return: true

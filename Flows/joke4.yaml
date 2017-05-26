@@ -1,0 +1,32 @@
+name: joke4
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                Where do animals go when their tails fall off? The retail store 😂 
+                ...
+                Would you like me to tell you another one?
+            output: jokes
+            buttons:
+                - text: Yes
+                  flow: joke5
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: joke5
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

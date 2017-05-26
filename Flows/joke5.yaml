@@ -1,0 +1,32 @@
+name: joke5
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                What's Forrest Gump's password? 1Forrest1 😂 
+                ...
+                Would you like me to tell you another one?
+            output: jokes
+            buttons:
+                - text: Yes
+                  flow: joke6
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: joke6
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

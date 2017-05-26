@@ -1,0 +1,29 @@
+name: song3
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: do re mi - Blackbear - Would you like to hear another one? https://open.spotify.com/track/3sTCfUmYXSVWDacTd6uMbQ
+            output: songs
+            buttons:
+                - text: Yes
+                  flow: song4
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: song4
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

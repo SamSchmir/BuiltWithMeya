@@ -1,0 +1,29 @@
+name: joke
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: A piece of advice - Never play leapfrog with a unicorn 😂 Would you like me to tell you another one?
+            output: jokes
+            buttons:
+                - text: Yes
+                  flow: joke1
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: joke1
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

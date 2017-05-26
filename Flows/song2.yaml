@@ -1,0 +1,29 @@
+name: song2
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Malibu - Miley Cyrus - Would you like to hear another one? https://open.spotify.com/track/2habSXqcJGExM6JJyskY7O
+            output: songs
+            buttons:
+                - text: Yes
+                  flow: song3
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: song3
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

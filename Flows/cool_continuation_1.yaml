@@ -1,0 +1,6 @@
+name: cool_continuation_1
+states:
+    text_buttons_state:
+        component: meya.text
+        properties:
+            text: Thanks! I'm glad you like them 😄 Type "/home" to return to the Main Menu

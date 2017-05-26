@@ -1,0 +1,12 @@
+name: learn
+states:
+    text_buttons_state:
+        component: meya.text
+        properties:
+            text: |
+                Want to learn more about automated experiences? https://dev.twitter.com/build/automation
+                ...
+                How did I build my bot?
+                I built my bot with Meya (@Meya). https://meya.ai
+                ...
+                Type "/home" to return to the main menu.

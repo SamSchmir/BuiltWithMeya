@@ -1,0 +1,29 @@
+name: song4
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: Mask Off - Future - Would you like to hear another one? https://open.spotify.com/track/3rOSwuTsUlJp0Pu0MkN8r8
+            output: songs
+            buttons:
+                - text: Yes
+                  flow: song5
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: song5
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true

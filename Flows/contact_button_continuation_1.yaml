@@ -1,0 +1,36 @@
+name: contact_button_continuation_1
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: I have two main ways for you to contact me. Click one of the options below and I'll send a message back with the contact information.
+            output: platform
+            buttons:
+                - text: Email
+                  action: email
+                - text: Twitter
+                  action: twitter
+                - text: 🏠 Home
+                  flow: main_menu
+                  action: home
+        transitions:
+            email: email_state
+            twitter: twitter_state
+            home: home_state
+    twitter_state:
+        component: meya.text
+        properties:
+            text: You can Tweet me @SamSchmir. I read all of my mentions!
+        return: true
+    email_state:
+        component: meya.text
+        properties:
+            text: If you need to contact me via email, it's sam@schmir.me
+        return: true
+    home_state:
+        component: meya.text_buttons
+        properties:
+            text: 🏠 Home
+            flow: main_menu
+            description: Go back to the main menu
+        return: true
