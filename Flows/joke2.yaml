@@ -1,0 +1,32 @@
+name: joke2
+states:
+    text_buttons_state:
+        component: meya.text_buttons
+        properties:
+            text: |
+                I went to the zoo the other day. It was empty, except for a single dog... It was a Shih Tzu 😂 
+                ...
+                Would you like me to tell you another one?
+            output: jokes
+            buttons:
+                - text: Yes
+                  flow: joke3
+                  action: yep
+                - text: No
+                  flow: main_menu
+                  action: nah
+        transitions:
+            yep: yep_state
+            nah: nah_state
+    yep_state:
+        component: meya.text_buttons
+        properties:
+            text: Yes
+            flow: joke3
+        return: true
+    emoji_state:
+        component: meya.text_buttons
+        properties:
+            text: No
+            flow: main_menu
+        return: true
